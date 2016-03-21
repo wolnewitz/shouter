@@ -1,2 +1,9 @@
 <h1><%= @user.username %></h1>
+
+<% if @user.followers.include? current_user %>
+  <%= "You are following #{@user.username}" %>
+<% else %>
+  <%= follow_button @user %>
+<% end %>
+
 <%= render @shouts %>
