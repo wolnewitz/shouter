@@ -13,7 +13,7 @@ class Dashboard
     PhotoShout.new
   end
 
-  def shouts
-    @shouts = Shout.all
+  def timeline
+    Timeline.new(@current_user)
   end
 end
