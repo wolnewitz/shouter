@@ -23,5 +23,9 @@ module Following
     def following? user
       user.followers.include? self
     end
+    
+    def can_follow? user
+      self != user
+    end
   end
 end
