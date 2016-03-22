@@ -1,11 +1,11 @@
 <%= form_for @dashboard.new_text_shout do |form| %>
-  <%= form.text_field :body, placeholder: "Shout content here" %>
-  <%= form.submit %>
+  <%= form.text_field :body, placeholder: "Shout content here", id: "text" %>
+  <%= form.submit "Create text shout" %>
 <% end %>
 
 <%= form_for @dashboard.new_photo_shout do |form| %>
   <%= form.file_field :image %>
-  <%= form.submit %>
+  <%= form.submit "Create image shout" %>
 <% end %>
 
 <%= render @dashboard.timeline %>
