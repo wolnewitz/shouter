@@ -5,8 +5,7 @@ class Shout < ActiveRecord::Base
 
   validates_associated :content
 
-  def self.search term
-    text_shouts = TextShout.where("body LIKE ?", "%#{term}%")
-    where(content_type: 'TextShout', content_id: text_shouts)
+  def self.text_shouts
+    where("content_type = ?", "TextShout")
   end
 end
