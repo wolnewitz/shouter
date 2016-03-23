@@ -6,13 +6,13 @@ module ShoutsHelper
     image_tag("http://gravatar.com/avatar/#{digest}?s=#{size}")
   end
 
-  def shouterize body
-    arr = body.split(" ")
+  def shouterize shout
+    arr = shout.body.split(" ")
     arr.each_with_index do |word, index|
       if word =~ /#\w+/
-        arr[index] = link_to(word, '/')  
+        arr[index] = link_to(word, shout_search_path(shout.id, word))  
       end
     end
-    sanitize(arr.join(" "))
+    arr.join(" ")
   end
 end
